@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">ClassTime</string>
+    <string name="home">Home</string>
+    <string name="dashboard" tools:ignore="ExtraTranslation">Dashboard</string>
+    <string name="profile">Profile</string>
+    <string name="add_course">Add Course</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="send_code">Send Code</string>
+    <string name="phone_number_required">Valid phone number required</string>
+    <string name="enter_code">Enter Code</string>
+    <string name="code_required">Valid code required</string>
+    <string name="sign_in">Sign In</string>
+    <string name="phone_hint">Ex. +1 123-456-7890</string>
+    <string name="code_hint">Ex. 123456</string>
+</resources>
