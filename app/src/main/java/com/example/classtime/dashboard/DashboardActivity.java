@@ -51,12 +51,14 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
     public void navigateToAddCourse() {
         Intent intent = new Intent(this, AddCourseActivity.class);
         startActivity(intent);
+        overridePendingTransition(0, 0);
     }
 
     @Override
     public void navigateToProfile() {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
+        overridePendingTransition(0, 0);
     }
 
     @Override
