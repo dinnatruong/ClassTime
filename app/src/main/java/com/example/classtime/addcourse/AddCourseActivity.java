@@ -1,29 +1,29 @@
-package com.example.classtime.dashboard;
+package com.example.classtime.addcourse;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.NonNull;
 import android.view.MenuItem;
 
 import com.example.classtime.R;
-import com.example.classtime.addcourse.AddCourseActivity;
+import com.example.classtime.dashboard.DashboardActivity;
 import com.example.classtime.profile.ProfileActivity;
 
-public class DashboardActivity extends AppCompatActivity implements DashboardContract.View {
-    private DashboardPresenter presenter;
+public class AddCourseActivity extends AppCompatActivity implements AddCourseContract.View {
+    private AddCoursePresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_add_course);
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
-        presenter = new DashboardPresenter(this);
+        presenter = new AddCoursePresenter(this);
 
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navView.getMenu().getItem(0).setChecked(true);
+        navView.getMenu().getItem(1).setChecked(true);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -33,9 +33,9 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_dashboard:
+                    presenter.onBottomNavDashboardClicked();
                     break;
                 case R.id.navigation_add_course:
-                    presenter.onBottomNavAddCourseClicked();
                     break;
                 case R.id.navigation_profile:
                     presenter.onBottomNavProfileClicked();
@@ -46,14 +46,16 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
     };
 
     @Override
-    public void navigateToAddCourse() {
-        Intent intent = new Intent(this, AddCourseActivity.class);
+    public void navigateToDashboard() {
+        Intent intent = new Intent(this, DashboardActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
     public void navigateToProfile() {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
+        finish();
     }
 }
