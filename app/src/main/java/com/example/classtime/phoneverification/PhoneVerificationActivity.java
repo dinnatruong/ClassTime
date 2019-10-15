@@ -22,6 +22,9 @@ public class PhoneVerificationActivity extends AppCompatActivity implements Phon
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_verification);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         Button signInBtn = findViewById(R.id.signInBtn);
         codeEditText = findViewById(R.id.code);
         progressBar = findViewById(R.id.progressBar);
@@ -73,5 +76,11 @@ public class PhoneVerificationActivity extends AppCompatActivity implements Phon
     @Override
     public void toggleProgressBar(boolean isVisible) {
         progressBar.setVisibility(isVisible ? View.VISIBLE : View.GONE);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }

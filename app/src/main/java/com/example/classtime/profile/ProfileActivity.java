@@ -48,7 +48,6 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     @Override
     public void navigateToDashboard() {
         Intent intent = new Intent(this, DashboardActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
         overridePendingTransition(0, 0);
         finish();
@@ -57,10 +56,8 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     @Override
     public void navigateToAddCourse() {
         Intent intent = new Intent(this, AddCourseActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
-        overridePendingTransition(0, 0);
-        finish();
+        overridePendingTransition(R.anim.anim_slide_up, R.anim.anim_no_change);
     }
 
     @Override

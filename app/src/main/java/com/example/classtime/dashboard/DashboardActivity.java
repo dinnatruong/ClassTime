@@ -51,7 +51,7 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
     public void navigateToAddCourse() {
         Intent intent = new Intent(this, AddCourseActivity.class);
         startActivity(intent);
-        overridePendingTransition(0, 0);
+        overridePendingTransition(R.anim.anim_slide_up, R.anim.anim_no_change);
     }
 
     @Override

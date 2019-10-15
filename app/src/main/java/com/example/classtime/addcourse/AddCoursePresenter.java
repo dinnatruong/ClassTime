@@ -6,14 +6,4 @@ public class AddCoursePresenter implements AddCourseContract.Presenter {
     AddCoursePresenter(AddCourseContract.View view) {
         this.view = view;
     }
-
-    @Override
-    public void onBottomNavDashboardClicked() {
-        view.navigateToDashboard();
-    }
-
-    @Override
-    public void onBottomNavProfileClicked() {
-        view.navigateToProfile();
-    }
 }
