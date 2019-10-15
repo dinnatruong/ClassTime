@@ -48,6 +48,7 @@ public class AddCourseActivity extends AppCompatActivity implements AddCourseCon
     @Override
     public void navigateToDashboard() {
         Intent intent = new Intent(this, DashboardActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
         finish();
     }
@@ -55,6 +56,7 @@ public class AddCourseActivity extends AppCompatActivity implements AddCourseCon
     @Override
     public void navigateToProfile() {
         Intent intent = new Intent(this, ProfileActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
         finish();
     }

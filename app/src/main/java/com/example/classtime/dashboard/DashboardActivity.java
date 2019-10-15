@@ -1,5 +1,7 @@
 package com.example.classtime.dashboard;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -55,5 +57,23 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
     public void navigateToProfile() {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+            .setIcon(R.drawable.ic_sign_out)
+            .setTitle(R.string.sign_out)
+            .setMessage(R.string.sign_out_message)
+            .setPositiveButton(R.string.sign_out, new DialogInterface.OnClickListener()
+            {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+
+            })
+            .setNegativeButton(android.R.string.no, null)
+            .show();
     }
 }

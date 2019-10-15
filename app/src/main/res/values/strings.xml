@@ -12,4 +12,6 @@
     <string name="sign_in">Sign In</string>
     <string name="phone_hint">Ex. +1 123-456-7890</string>
     <string name="code_hint">Ex. 123456</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sign_out_message">Are you sure you want to sign out of ClassTime?</string>
 </resources>
