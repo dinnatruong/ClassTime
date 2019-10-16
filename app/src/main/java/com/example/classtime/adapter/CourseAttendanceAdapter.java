@@ -2,6 +2,7 @@ package com.example.classtime.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,8 +36,8 @@ public class CourseAttendanceAdapter extends RecyclerView.Adapter<CourseAttendan
         holder.courseCodeTextView.setText(courseAttendance.getCourseCode());
 
         int totalClasses = courseAttendance.getAttended() + courseAttendance.getMissed();
-        int averageAttended = totalClasses > 0 ? (courseAttendance.getAttended() / totalClasses) : 0;
-        holder.percentageTextView.setText(String.format("%d%%", averageAttended));
+        float averageAttended = totalClasses > 0 ? ((float) courseAttendance.getAttended() / (float) totalClasses) * 100 : 0;
+        holder.percentageTextView.setText(String.format("%d%%", (int) averageAttended));
     }
 
     @Override

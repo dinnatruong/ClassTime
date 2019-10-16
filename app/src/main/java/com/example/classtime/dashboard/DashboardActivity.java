@@ -12,12 +12,15 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.classtime.R;
 import com.example.classtime.adapter.CourseAttendanceAdapter;
 import com.example.classtime.addcourse.AddCourseActivity;
+import com.example.classtime.courseattendancedetails.CourseAttendanceDetailsActivity;
 import com.example.classtime.data.model.CourseAttendance;
 import com.example.classtime.profile.ProfileActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -66,6 +69,16 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
         }
     };
 
+
+    private View.OnClickListener onCourseClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
+            int position = viewHolder.getAdapterPosition();
+            presenter.onCourseAttendanceClicked(position);
+        }
+    };
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -87,8 +100,16 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
     }
 
     @Override
+    public void navigateToCourseAttendanceDetails(CourseAttendance courseAttendance) {
+        Intent intent = new Intent(DashboardActivity.this, CourseAttendanceDetailsActivity.class);
+        intent.putExtra("COURSE_ATTENDANCE", courseAttendance);
+        startActivity(intent);
+    }
+
+    @Override
     public void updateCourseAttendances(ArrayList<CourseAttendance> courseAttendances) {
         CourseAttendanceAdapter courseAttendanceAdapter = new CourseAttendanceAdapter(this, courseAttendances);
+        courseAttendanceAdapter.setOnItemClickListener(onCourseClickListener);
         this.courseAttendances.setAdapter(courseAttendanceAdapter);
     }
 
@@ -102,6 +123,7 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
             {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+                    FirebaseAuth.getInstance().signOut();
                     finish();
                 }
 

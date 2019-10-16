@@ -34,6 +34,9 @@
         <activity
             android:name=".profile.ProfileActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".courseattendancedetails.CourseAttendanceDetailsActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

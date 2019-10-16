@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="semi_transparent_accent">#F6F6F6</color>
+    <color name="sky_blue">#0080ff</color>
 </resources>

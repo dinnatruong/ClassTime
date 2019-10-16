@@ -2,7 +2,9 @@ package com.example.classtime.data.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CourseAttendance {
+import java.io.Serializable;
+
+public class CourseAttendance implements Serializable {
 
     @SerializedName("id_attendance")
     private int attendanceId;
@@ -69,5 +71,13 @@ public class CourseAttendance {
 
     public String getCourseCode() {
         return courseCode;
+    }
+
+    public void setAttended(int attended) {
+        this.attended = attended;
+    }
+
+    public void setMissed(int missed) {
+        this.missed = missed;
     }
 }

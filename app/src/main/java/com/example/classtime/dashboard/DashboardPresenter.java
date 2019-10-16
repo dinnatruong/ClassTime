@@ -15,6 +15,7 @@ public class DashboardPresenter implements DashboardContract.Presenter {
     private DashboardContract.View view;
     private ClassTimeService classTimeService;
     private Student student;
+    private ArrayList<CourseAttendance> courseAttendances;
 
     DashboardPresenter(DashboardContract.View view) {
         this.view = view;
@@ -29,6 +30,13 @@ public class DashboardPresenter implements DashboardContract.Presenter {
     @Override
     public void onBottomNavProfileClicked() {
         view.navigateToProfile();
+    }
+
+    @Override
+    public void onCourseAttendanceClicked(int position) {
+        if (courseAttendances.size() > 0) {
+            view.navigateToCourseAttendanceDetails(courseAttendances.get(position));
+        }
     }
 
     @Override
@@ -79,6 +87,7 @@ public class DashboardPresenter implements DashboardContract.Presenter {
             @Override
             public void onResponse(Call<ArrayList<CourseAttendance>> call, Response<ArrayList<CourseAttendance>> response) {
                 if (response.body() != null) {
+                    courseAttendances = response.body();
                     view.updateCourseAttendances(response.body());
                 }
             }

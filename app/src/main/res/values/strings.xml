@@ -14,11 +14,16 @@
     <string name="code_hint">Ex. 123456</string>
     <string name="sign_out">Sign Out</string>
     <string name="sign_out_message">Are you sure you want to sign out of ClassTime?</string>
-    <string name="attended">attended</string>
+    <string name="classes_attended">classes attended</string>
+    <string name="classes_attended_cap">Classes Attended</string>
     <string name="course_name">Course Name</string>
     <string name="course_name_hint">Ex. Calculus 1</string>
     <string name="course_name_required">Course name required</string>
     <string name="course_code">Course Code</string>
     <string name="course_code_hint">Ex. MATH101</string>
     <string name="course_code_required">Course code required</string>
+    <string name="add">+</string>
+    <string name="subtract">-</string>
+    <string name="classes_missed">Classes Missed</string>
+    <string name="attendance_details">Attendance Details</string>
 </resources>
