@@ -17,14 +17,19 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="@string/code_hint"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:background="@drawable/outline_container"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:id="@+id/signInBtn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
-        android:text="@string/sign_in"/>
+        android:text="@string/sign_in"
+        android:textColor="@color/white"
+        android:background="@color/colorAccent"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

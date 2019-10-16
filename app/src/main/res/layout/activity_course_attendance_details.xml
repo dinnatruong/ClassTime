@@ -18,7 +18,8 @@
             android:id="@+id/courseName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_marginTop="5dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +31,8 @@
             android:id="@+id/courseCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_marginTop="5dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,13 +44,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginTop="20dp">
 
             <Button
                 android:id="@+id/subtractAttended"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="@string/subtract"/>
+                android:text="@string/subtract"
+                android:textColor="@color/white"
+                android:background="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/classesAttended"
@@ -63,7 +68,9 @@
                 android:id="@+id/addAttended"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="@string/add"/>
+                android:text="@string/add"
+                android:textColor="@color/white"
+                android:background="@color/colorAccent"/>
 
         </LinearLayout>
 
@@ -77,13 +84,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginTop="20dp">
 
             <Button
                 android:id="@+id/subtractMissed"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="@string/subtract"/>
+                android:text="@string/subtract"
+                android:textColor="@color/white"
+                android:background="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/classesMissed"
@@ -98,7 +108,9 @@
                 android:id="@+id/addMissed"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="@string/add"/>
+                android:text="@string/add"
+                android:textColor="@color/white"
+                android:background="@color/colorAccent"/>
 
         </LinearLayout>
 

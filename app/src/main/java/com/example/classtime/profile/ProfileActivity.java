@@ -18,6 +18,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        getSupportActionBar().setTitle(R.string.profile);
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
         presenter = new ProfilePresenter(this);
@@ -48,6 +49,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     @Override
     public void navigateToDashboard() {
         Intent intent = new Intent(this, DashboardActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
         overridePendingTransition(0, 0);
         finish();
@@ -64,5 +66,6 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(0, 0);
+        finish();
     }
 }

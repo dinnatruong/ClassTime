@@ -19,7 +19,10 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:hint="@string/course_name_hint"
-            android:inputType="textCapSentences" />
+            android:inputType="textCapSentences"
+            android:background="@drawable/outline_container"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -32,14 +35,19 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:hint="@string/course_code_hint"
-            android:inputType="textCapSentences" />
+            android:inputType="textCapSentences"
+            android:background="@drawable/outline_container"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"/>
 
         <Button
             android:id="@+id/addCourseBtn"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
-            android:text="@string/add_course"/>
+            android:text="@string/add_course"
+            android:textColor="@color/white"
+            android:background="@color/colorAccent"/>
 
     </LinearLayout>
 

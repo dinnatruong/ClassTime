@@ -3,27 +3,54 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_vertical"
-    android:layout_margin="20dp">
+    android:orientation="vertical">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/enter_phone_number"/>
+        android:src="@drawable/logo"
+        android:background="@color/colorPrimary"
+        android:adjustViewBounds="true"
+        android:layout_weight="1"
+        android:padding="20dp"/>
 
-    <EditText
-        android:id="@+id/phoneNumber"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="@string/phone_hint"
-        android:inputType="phone"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
-    <Button
-        android:id="@+id/sendCodeBtn"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/send_code"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_phone_number"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="@string/phone_hint"
+            android:inputType="phone"
+            android:background="@drawable/outline_container"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+        <Button
+            android:id="@+id/sendCodeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/send_code"
+            android:textColor="@color/white"
+            android:background="@color/colorAccent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -5,9 +5,9 @@
     <string name="profile">Profile</string>
     <string name="add_course">Add Course</string>
     <string name="enter_phone_number">Enter phone number</string>
-    <string name="send_code">Send Code</string>
+    <string name="send_code">Send Verification Code</string>
     <string name="phone_number_required">Valid phone number required</string>
-    <string name="enter_code">Enter Code</string>
+    <string name="enter_code">Enter the verification code sent to your phone</string>
     <string name="code_required">Valid code required</string>
     <string name="sign_in">Sign In</string>
     <string name="phone_hint">Ex. +1 123-456-7890</string>
@@ -26,4 +26,5 @@
     <string name="subtract">-</string>
     <string name="classes_missed">Classes Missed</string>
     <string name="attendance_details">Attendance Details</string>
+    <string name="phone_verification">Phone Verification</string>
 </resources>

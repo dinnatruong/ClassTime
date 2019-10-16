@@ -24,6 +24,7 @@ public class PhoneVerificationActivity extends AppCompatActivity implements Phon
         setContentView(R.layout.activity_phone_verification);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle(R.string.phone_verification);
 
         final String phoneNumber = getIntent().getStringExtra("PHONE_NUMBER");
 

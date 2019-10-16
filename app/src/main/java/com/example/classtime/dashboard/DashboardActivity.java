@@ -33,6 +33,9 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.logo);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         phoneNumber = PreferenceManager.getDefaultSharedPreferences(this).getString("PHONE_NUMBER", "");
 
         presenter = new DashboardPresenter(this);
