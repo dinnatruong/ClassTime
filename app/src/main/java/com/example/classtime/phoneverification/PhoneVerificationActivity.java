@@ -2,6 +2,7 @@ package com.example.classtime.phoneverification;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -16,7 +17,6 @@ import com.example.classtime.dashboard.DashboardActivity;
 
 public class PhoneVerificationActivity extends AppCompatActivity implements PhoneVerificationContract.View {
     private EditText codeEditText;
-    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +25,14 @@ public class PhoneVerificationActivity extends AppCompatActivity implements Phon
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        Button signInBtn = findViewById(R.id.signInBtn);
-        codeEditText = findViewById(R.id.code);
-        progressBar = findViewById(R.id.progressBar);
+        final String phoneNumber = getIntent().getStringExtra("PHONE_NUMBER");
 
         final PhoneVerificationPresenter presenter = new PhoneVerificationPresenter(this);
-
-        final String phoneNumber = getIntent().getStringExtra("PHONE_NUMBER");
         presenter.sendVerificationCode(phoneNumber);
+
+        // Set up click listeners
+        Button signInBtn = findViewById(R.id.signInBtn);
+        codeEditText = findViewById(R.id.code);
 
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,13 +68,14 @@ public class PhoneVerificationActivity extends AppCompatActivity implements Phon
     @Override
     public void navigateToDashboard(String phoneNumber) {
         Intent intent = new Intent(this, DashboardActivity.class);
-        intent.putExtra("PHONE_NUMBER", phoneNumber);
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putString("PHONE_NUMBER", phoneNumber).apply();
         startActivity(intent);
         finish();
     }
 
     @Override
     public void toggleProgressBar(boolean isVisible) {
+        ProgressBar progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(isVisible ? View.VISIBLE : View.GONE);
     }
 

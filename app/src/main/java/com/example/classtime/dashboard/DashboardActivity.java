@@ -4,26 +4,44 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
 import com.example.classtime.R;
+import com.example.classtime.adapter.CourseAttendanceAdapter;
 import com.example.classtime.addcourse.AddCourseActivity;
+import com.example.classtime.data.model.CourseAttendance;
 import com.example.classtime.profile.ProfileActivity;
+
+import java.util.ArrayList;
 
 public class DashboardActivity extends AppCompatActivity implements DashboardContract.View {
     private DashboardPresenter presenter;
+    private RecyclerView courseAttendances;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        String phoneNumber = PreferenceManager.getDefaultSharedPreferences(this).getString("PHONE_NUMBER", "");
 
         presenter = new DashboardPresenter(this);
+        presenter.getStudent(phoneNumber);
 
+        // Initialize RecyclerView for course attendances list
+        courseAttendances = findViewById(R.id.courseAttendancesList);
+        courseAttendances.setLayoutManager(new LinearLayoutManager(this));
+        courseAttendances.addItemDecoration(new DividerItemDecoration(courseAttendances.getContext(), DividerItemDecoration.VERTICAL));
+        presenter.getClassAttendances(phoneNumber);
+
+        // Set up bottom nav bar
+        BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navView.getMenu().getItem(0).setChecked(true);
     }
@@ -59,6 +77,12 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
         overridePendingTransition(0, 0);
+    }
+
+    @Override
+    public void updateCourseAttendances(ArrayList<CourseAttendance> courseAttendances) {
+        CourseAttendanceAdapter courseAttendanceAdapter = new CourseAttendanceAdapter(this, courseAttendances);
+        this.courseAttendances.setAdapter(courseAttendanceAdapter);
     }
 
     @Override

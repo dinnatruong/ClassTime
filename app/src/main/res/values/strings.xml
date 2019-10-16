@@ -14,4 +14,5 @@
     <string name="code_hint">Ex. 123456</string>
     <string name="sign_out">Sign Out</string>
     <string name="sign_out_message">Are you sure you want to sign out of ClassTime?</string>
+    <string name="attended">attended</string>
 </resources>
