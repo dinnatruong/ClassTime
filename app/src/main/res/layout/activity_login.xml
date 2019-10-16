@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center_vertical"
+    android:layout_margin="20dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,13 +17,13 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="@string/phone_hint"
-        android:inputType="phone"
-        android:layout_margin="20dp"/>
+        android:inputType="phone"/>
 
     <Button
         android:id="@+id/sendCodeBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginTop="20dp"
         android:text="@string/send_code"/>
 
 </LinearLayout>

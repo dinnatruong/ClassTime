@@ -25,6 +25,14 @@ public class CourseAttendance {
     @SerializedName("code")
     private String courseCode;
 
+    public CourseAttendance(int studentId, int attended, int missed, String courseTitle, String courseCode) {
+        this.studentId = studentId;
+        this.attended = attended;
+        this.missed = missed;
+        this.courseTitle = courseTitle;
+        this.courseCode = courseCode;
+    }
+
     public CourseAttendance(int attendanceId, int studentId, int attended, int missed, int courseId, String courseTitle, String courseCode) {
         this.attendanceId = attendanceId;
         this.studentId = studentId;

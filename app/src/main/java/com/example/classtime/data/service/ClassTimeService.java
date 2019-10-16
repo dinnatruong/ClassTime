@@ -1,6 +1,7 @@
 package com.example.classtime.data.service;
 
 import com.example.classtime.data.model.CourseAttendance;
+import com.example.classtime.data.model.Result;
 import com.example.classtime.data.model.Student;
 
 import java.util.ArrayList;
@@ -22,4 +23,6 @@ public interface ClassTimeService {
     @GET("/attendance")
     Call<ArrayList<CourseAttendance>> getCourseAttendances(@Query("phone_number") String phoneNumber);
 
+    @POST("/attendance")
+    Call<Result> createCourseAttendance(@Body CourseAttendance body);
 }

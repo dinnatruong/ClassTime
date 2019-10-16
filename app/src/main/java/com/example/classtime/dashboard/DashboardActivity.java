@@ -24,12 +24,13 @@ import java.util.ArrayList;
 public class DashboardActivity extends AppCompatActivity implements DashboardContract.View {
     private DashboardPresenter presenter;
     private RecyclerView courseAttendances;
+    private String phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        String phoneNumber = PreferenceManager.getDefaultSharedPreferences(this).getString("PHONE_NUMBER", "");
+        phoneNumber = PreferenceManager.getDefaultSharedPreferences(this).getString("PHONE_NUMBER", "");
 
         presenter = new DashboardPresenter(this);
         presenter.getStudent(phoneNumber);
@@ -64,6 +65,12 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
             return false;
         }
     };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        presenter.getClassAttendances(phoneNumber);
+    }
 
     @Override
     public void navigateToAddCourse() {
