@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
@@ -29,4 +30,8 @@ public interface ClassTimeService {
 
     @PATCH("/attendance")
     Call<Result> updateCourseAttendance(@Body CourseAttendance body, @Query("id") int courseAttendanceId);
+
+    @DELETE("/attendance")
+    Call<Result> deleteCourseAttendance(@Query("id_attendance") int courseAttendanceId);
+
 }

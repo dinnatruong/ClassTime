@@ -48,6 +48,23 @@ public class CourseAttendanceDetailsPresenter implements CourseAttendanceDetails
         updateCourseAttendance();
     }
 
+    @Override
+    public void onDeleteCourseClicked() {
+        classTimeService.deleteCourseAttendance(courseAttendance.getAttendanceId()).enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                if (response.body() != null && response.body().getResult().contains("Success")) {
+                    view.closeCourse();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+
+            }
+        });
+    }
+
     private void updateCourseAttendance() {
         classTimeService.updateCourseAttendance(courseAttendance, courseAttendance.getAttendanceId()).enqueue(new Callback<Result>() {
             @Override

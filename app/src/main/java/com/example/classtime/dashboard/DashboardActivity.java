@@ -45,7 +45,6 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
         courseAttendances = findViewById(R.id.courseAttendancesList);
         courseAttendances.setLayoutManager(new LinearLayoutManager(this));
         courseAttendances.addItemDecoration(new DividerItemDecoration(courseAttendances.getContext(), DividerItemDecoration.VERTICAL));
-        presenter.getClassAttendances(phoneNumber);
 
         // Set up bottom nav bar
         BottomNavigationView navView = findViewById(R.id.nav_view);

@@ -1,7 +1,11 @@
 package com.example.classtime.courseattendancedetails;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,6 +18,7 @@ public class CourseAttendanceDetailsActivity extends AppCompatActivity implement
     private TextView courseCode;
     private TextView classesAttended;
     private TextView classesMissed;
+    private CourseAttendanceDetailsPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +34,7 @@ public class CourseAttendanceDetailsActivity extends AppCompatActivity implement
         classesMissed = findViewById(R.id.classesMissed);
 
         CourseAttendance courseAttendance = (CourseAttendance) getIntent().getSerializableExtra("COURSE_ATTENDANCE");
-        final CourseAttendanceDetailsPresenter presenter = new CourseAttendanceDetailsPresenter(this, courseAttendance);
+        presenter = new CourseAttendanceDetailsPresenter(this, courseAttendance);
 
         // Set up click listeners
         Button subtractAttended = findViewById(R.id.subtractAttended);
@@ -80,8 +85,39 @@ public class CourseAttendanceDetailsActivity extends AppCompatActivity implement
     }
 
     @Override
+    public void closeCourse() {
+        finish();
+    }
+
+    @Override
     public boolean onSupportNavigateUp() {
         finish();
         return true;
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.course_attendance_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.deleteCourse) {
+            new AlertDialog.Builder(this)
+                .setTitle(R.string.delete_course)
+                .setMessage(R.string.delete_course_message)
+                .setPositiveButton(R.string.delete_course, new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        presenter.onDeleteCourseClicked();
+                    }
+
+                })
+                .setNegativeButton(android.R.string.no, null)
+                .show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
