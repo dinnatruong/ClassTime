@@ -1,4 +1,4 @@
-package com.example.classtime.addcourse;
+package com.example.classtime.ui.addcourse;
 
 import android.os.Bundle;
 import android.preference.PreferenceManager;

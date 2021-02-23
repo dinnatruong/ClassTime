@@ -1,4 +1,4 @@
-package com.example.classtime.addcourse;
+package com.example.classtime.ui.addcourse;
 
 public interface AddCourseContract {
 

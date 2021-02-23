@@ -1,4 +1,4 @@
-package com.example.classtime.phoneverification;
+package com.example.classtime.ui.phoneverification;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.classtime.R;
-import com.example.classtime.dashboard.DashboardActivity;
+import com.example.classtime.ui.dashboard.DashboardActivity;
 
 public class PhoneVerificationActivity extends AppCompatActivity implements PhoneVerificationContract.View {
     private EditText codeEditText;

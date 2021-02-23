@@ -1,4 +1,4 @@
-package com.example.classtime.login;
+package com.example.classtime.ui.login;
 
 public interface LoginContract {
 

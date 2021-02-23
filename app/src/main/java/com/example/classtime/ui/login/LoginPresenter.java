@@ -1,4 +1,4 @@
-package com.example.classtime.login;
+package com.example.classtime.ui.login;
 
 public class LoginPresenter implements LoginContract.Presenter {
     private LoginContract.View view;

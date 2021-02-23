@@ -1,4 +1,4 @@
-package com.example.classtime.profile;
+package com.example.classtime.ui.profile;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -14,9 +14,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.classtime.R;
-import com.example.classtime.addcourse.AddCourseActivity;
-import com.example.classtime.dashboard.DashboardActivity;
-import com.example.classtime.login.LoginActivity;
+import com.example.classtime.ui.addcourse.AddCourseActivity;
+import com.example.classtime.ui.dashboard.DashboardActivity;
+import com.example.classtime.ui.login.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileActivity extends AppCompatActivity implements ProfileContract.View {

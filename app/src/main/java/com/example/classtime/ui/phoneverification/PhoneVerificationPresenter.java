@@ -1,4 +1,4 @@
-package com.example.classtime.phoneverification;
+package com.example.classtime.ui.phoneverification;
 
 import android.support.annotation.NonNull;
 

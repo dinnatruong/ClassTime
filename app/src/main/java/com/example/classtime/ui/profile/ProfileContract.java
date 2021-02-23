@@ -1,4 +1,4 @@
-package com.example.classtime.profile;
+package com.example.classtime.ui.profile;
 
 public interface ProfileContract {
 

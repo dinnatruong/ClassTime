@@ -1,4 +1,4 @@
-package com.example.classtime.login;
+package com.example.classtime.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.classtime.R;
-import com.example.classtime.phoneverification.PhoneVerificationActivity;
+import com.example.classtime.ui.phoneverification.PhoneVerificationActivity;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View {
     private EditText phoneNumberEditText;

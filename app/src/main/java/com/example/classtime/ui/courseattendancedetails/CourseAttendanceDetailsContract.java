@@ -1,4 +1,4 @@
-package com.example.classtime.courseattendancedetails;
+package com.example.classtime.ui.courseattendancedetails;
 
 public interface CourseAttendanceDetailsContract {
 

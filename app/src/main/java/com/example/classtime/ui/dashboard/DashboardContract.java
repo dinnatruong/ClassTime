@@ -1,4 +1,4 @@
-package com.example.classtime.dashboard;
+package com.example.classtime.ui.dashboard;
 
 import com.example.classtime.data.model.CourseAttendance;
 

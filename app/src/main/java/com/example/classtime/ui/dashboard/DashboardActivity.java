@@ -1,4 +1,4 @@
-package com.example.classtime.dashboard;
+package com.example.classtime.ui.dashboard;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.classtime.R;
-import com.example.classtime.addcourse.AddCourseActivity;
-import com.example.classtime.courseattendancedetails.CourseAttendanceDetailsActivity;
+import com.example.classtime.ui.addcourse.AddCourseActivity;
+import com.example.classtime.ui.courseattendancedetails.CourseAttendanceDetailsActivity;
 import com.example.classtime.data.model.CourseAttendance;
-import com.example.classtime.profile.ProfileActivity;
+import com.example.classtime.ui.profile.ProfileActivity;
 
 import java.util.ArrayList;
 

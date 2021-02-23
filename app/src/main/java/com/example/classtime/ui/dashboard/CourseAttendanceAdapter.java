@@ -1,4 +1,4 @@
-package com.example.classtime.dashboard;
+package com.example.classtime.ui.dashboard;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
