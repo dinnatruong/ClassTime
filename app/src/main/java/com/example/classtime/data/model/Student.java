@@ -22,13 +22,6 @@ public class Student {
         this.phoneNumber = phoneNumber;
     }
 
-    public Student(int studentId, String firstName, String lastName, String phoneNumber) {
-        this.studentId = studentId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-    }
-
     public int getStudentId() {
         return studentId;
     }

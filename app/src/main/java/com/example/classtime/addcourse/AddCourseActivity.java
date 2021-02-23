@@ -31,6 +31,7 @@ public class AddCourseActivity extends AppCompatActivity implements AddCourseCon
         courseName = findViewById(R.id.courseName);
         courseCode = findViewById(R.id.courseCode);
 
+        // Set click listener to add a course
         addCourseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

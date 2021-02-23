@@ -1,7 +1,5 @@
 package com.example.classtime.dashboard;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -15,12 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.classtime.R;
-import com.example.classtime.adapter.CourseAttendanceAdapter;
 import com.example.classtime.addcourse.AddCourseActivity;
 import com.example.classtime.courseattendancedetails.CourseAttendanceDetailsActivity;
 import com.example.classtime.data.model.CourseAttendance;
 import com.example.classtime.profile.ProfileActivity;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -117,20 +113,6 @@ public class DashboardActivity extends AppCompatActivity implements DashboardCon
 
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder(this)
-            .setIcon(R.drawable.ic_sign_out)
-            .setTitle(R.string.sign_out)
-            .setMessage(R.string.sign_out_message)
-            .setPositiveButton(R.string.sign_out, new DialogInterface.OnClickListener()
-            {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    FirebaseAuth.getInstance().signOut();
-                    finish();
-                }
-
-            })
-            .setNegativeButton(android.R.string.no, null)
-            .show();
+        moveTaskToBack(true);
     }
 }

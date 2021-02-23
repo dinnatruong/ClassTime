@@ -35,16 +35,6 @@ public class CourseAttendance implements Serializable {
         this.courseCode = courseCode;
     }
 
-    public CourseAttendance(int attendanceId, int studentId, int attended, int missed, int courseId, String courseTitle, String courseCode) {
-        this.attendanceId = attendanceId;
-        this.studentId = studentId;
-        this.attended = attended;
-        this.missed = missed;
-        this.courseId = courseId;
-        this.courseTitle = courseTitle;
-        this.courseCode = courseCode;
-    }
-
     public int getAttendanceId() {
         return attendanceId;
     }

@@ -1,8 +1,10 @@
 package com.example.classtime.profile;
 
+import android.util.Log;
+
 import com.example.classtime.data.model.Student;
-import com.example.classtime.data.service.ClassTimeService;
-import com.example.classtime.data.service.RetrofitClient;
+import com.example.classtime.data.remote.ClassTimeService;
+import com.example.classtime.data.remote.RetrofitClient;
 
 import java.util.ArrayList;
 
@@ -45,7 +47,7 @@ public class ProfilePresenter implements ProfileContract.Presenter {
 
                 @Override
                 public void onFailure(Call<ArrayList<Student>> call, Throwable t) {
-
+                    Log.d("ERROR", t.getLocalizedMessage());
                 }
             });
         }

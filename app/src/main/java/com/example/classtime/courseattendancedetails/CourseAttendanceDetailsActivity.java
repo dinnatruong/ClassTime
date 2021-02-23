@@ -36,7 +36,7 @@ public class CourseAttendanceDetailsActivity extends AppCompatActivity implement
         CourseAttendance courseAttendance = (CourseAttendance) getIntent().getSerializableExtra("COURSE_ATTENDANCE");
         presenter = new CourseAttendanceDetailsPresenter(this, courseAttendance);
 
-        // Set up click listeners
+        // Set up click listeners to add or subtract classes attended/missed
         Button subtractAttended = findViewById(R.id.subtractAttended);
         subtractAttended.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +102,7 @@ public class CourseAttendanceDetailsActivity extends AppCompatActivity implement
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Display confirmation when deleting a course
         if (item.getItemId() == R.id.deleteCourse) {
             new AlertDialog.Builder(this)
                 .setTitle(R.string.delete_course)

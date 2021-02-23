@@ -1,9 +1,11 @@
 package com.example.classtime.courseattendancedetails;
 
+import android.util.Log;
+
 import com.example.classtime.data.model.CourseAttendance;
 import com.example.classtime.data.model.Result;
-import com.example.classtime.data.service.ClassTimeService;
-import com.example.classtime.data.service.RetrofitClient;
+import com.example.classtime.data.remote.ClassTimeService;
+import com.example.classtime.data.remote.RetrofitClient;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -60,7 +62,7 @@ public class CourseAttendanceDetailsPresenter implements CourseAttendanceDetails
 
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
-
+                Log.d("ERROR", t.getLocalizedMessage());
             }
         });
     }
@@ -76,7 +78,7 @@ public class CourseAttendanceDetailsPresenter implements CourseAttendanceDetails
 
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
-
+                Log.d("ERROR", t.getLocalizedMessage());
             }
         });
     }

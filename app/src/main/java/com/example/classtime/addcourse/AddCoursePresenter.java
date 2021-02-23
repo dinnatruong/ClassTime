@@ -1,10 +1,12 @@
 package com.example.classtime.addcourse;
 
+import android.util.Log;
+
 import com.example.classtime.data.model.CourseAttendance;
 import com.example.classtime.data.model.Result;
 import com.example.classtime.data.model.Student;
-import com.example.classtime.data.service.ClassTimeService;
-import com.example.classtime.data.service.RetrofitClient;
+import com.example.classtime.data.remote.ClassTimeService;
+import com.example.classtime.data.remote.RetrofitClient;
 
 import java.util.ArrayList;
 
@@ -52,7 +54,7 @@ public class AddCoursePresenter implements AddCourseContract.Presenter {
 
                 @Override
                 public void onFailure(Call<ArrayList<Student>> call, Throwable t) {
-
+                    Log.d("ERROR", t.getLocalizedMessage());
                 }
             });
         }
@@ -71,7 +73,7 @@ public class AddCoursePresenter implements AddCourseContract.Presenter {
 
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
-
+                Log.d("ERROR", t.getLocalizedMessage());
             }
         });
 

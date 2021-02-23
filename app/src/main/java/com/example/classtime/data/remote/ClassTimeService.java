@@ -1,4 +1,4 @@
-package com.example.classtime.data.service;
+package com.example.classtime.data.remote;
 
 import com.example.classtime.data.model.CourseAttendance;
 import com.example.classtime.data.model.Result;

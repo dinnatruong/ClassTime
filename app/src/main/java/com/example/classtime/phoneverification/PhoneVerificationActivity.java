@@ -31,7 +31,7 @@ public class PhoneVerificationActivity extends AppCompatActivity implements Phon
         final PhoneVerificationPresenter presenter = new PhoneVerificationPresenter(this);
         presenter.sendVerificationCode(phoneNumber);
 
-        // Set up click listeners
+        // Set up click listeners to sign in
         Button signInBtn = findViewById(R.id.signInBtn);
         codeEditText = findViewById(R.id.code);
 

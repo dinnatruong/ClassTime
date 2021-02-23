@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         Button sendCodeBtn = findViewById(R.id.sendCodeBtn);
         phoneNumberEditText = findViewById(R.id.phoneNumber);
 
+        // Set listeners to send the verification code
         sendCodeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

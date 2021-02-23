@@ -1,4 +1,4 @@
-package com.example.classtime.data.service;
+package com.example.classtime.data.remote;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -6,8 +6,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RetrofitClient {
     private Retrofit retrofit;
-    private String BASE_URL = "http://192.168.2.157:3000";
-//    private String BASE_URL = "http://10.11.171.63:3000";
+    private String BASE_URL = "http://192.168.2.224:3000";
 
     public ClassTimeService getClassTimeService() {
 
